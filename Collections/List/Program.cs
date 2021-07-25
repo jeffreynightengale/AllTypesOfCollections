@@ -23,7 +23,7 @@ namespace List
                 grades.Add(answer);
 
                 Console.WriteLine("Would you like to input another grade?");
-                response = Console.ReadLine();
+                response = Console.ReadLine().ToLower();
 
             } while (response[0] == 'y');
             
