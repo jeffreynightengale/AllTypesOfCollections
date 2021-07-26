@@ -18,9 +18,40 @@ namespace Dictionary
             Dictionary<string, List<double>> studentGrades = new Dictionary<string, List<double>>();
 
             studentGrades.Add("MIS3013", new List<double>());
-            studentGrades["MIS3013"].Add(.99);
-            studentGrades["MIS3013"].Add(.86);
-            studentGrades["MIS3013"].Add(.82);
+            studentGrades["MIS3013"].Add(99);
+            studentGrades["MIS3013"].Add(86);
+            studentGrades["MIS3013"].Add(82);
+
+            studentGrades.Add("ACCT 3013", new List<double>());
+            studentGrades["ACCT 3013"].Add(96);
+            studentGrades["ACCT 3013"].Add(82);
+            studentGrades["ACCT 3013"].Add(79);
+
+            studentGrades.Add("FIN 3033", new List<double>());
+            studentGrades["FIN 3033"].Add(100);
+            studentGrades["FIN 3033"].Add(95);
+            studentGrades["FIN 3033"].Add(88);
+
+            double average = 0; 
+            double extra = 0;
+
+            foreach (string courseCode in studentGrades.Keys)
+            {
+                List<double> grades = studentGrades[courseCode];
+                double sum = 0;
+
+                foreach (double grade in grades)
+                {
+                    extra = grade;
+                    sum = sum + grade;
+
+                    average = sum / grades.Count / 100;
+
+                    Console.WriteLine(grade.ToString("N0"));
+                }
+                Console.WriteLine($"Your average for {courseCode} is {average.ToString("P")}");
+            }
+            
 
 
 
